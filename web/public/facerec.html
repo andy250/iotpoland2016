@@ -21,7 +21,7 @@
 	<div id="my_camera"></div>
 	
 	<!-- First, include the Webcam.js JavaScript Library -->
-	<script type="text/javascript" src="../webcam.js"></script>
+	<script type="text/javascript" src="webcam.js"></script>
 	
 	<!-- Configure a few settings and attach camera -->
 	<script language="JavaScript">
@@ -35,10 +35,14 @@
 	</script>
 	
 	<!-- A button for taking snaps -->
-	<form>
-		<input type=button value="Take Snapshot" onClick="take_snapshot()">
+	<form id="myform">
+		<input type="hidden" id="mydata" name="imgdata" />
 	</form>
+
+	<button onClick="take_snapshot()" >Snapshot</button>
 	
+	<script src="https://code.jquery.com/jquery-3.1.0.min.js" type="text/javascript" ></script>
+
 	<!-- Code to handle taking the snapshot and displaying it locally -->
 	<script language="JavaScript">
 		function take_snapshot() {
@@ -48,6 +52,15 @@
 				document.getElementById('results').innerHTML = 
 					'<h2>Here is your image:</h2>' + 
 					'<img src="'+data_uri+'"/>';
+
+				var raw_image_data = data_uri.replace(/^data\:image\/\w+\;base64\,/, '');
+		        document.getElementById('mydata').value = raw_image_data;
+
+				$.ajax({
+					url: 'img',
+					type: 'post',
+					data: $( "#myform" ).serialize()
+				});
 			} );
 		}
 	</script>
