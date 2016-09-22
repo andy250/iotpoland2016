@@ -4,7 +4,7 @@
     Scan your face
     <script src="https://cdn.socket.io/socket.io-1.0.0.js"></script>
     <script>
-    var socket = io.connect('http://localhost:8085');
+    var socket = io.connect('http://homehub2016.mybluemix.net/');
 socket.on('connect', function(){
   socket.on('redirect_to', function(data){
     window.location.href = data + ".html";

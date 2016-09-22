@@ -1,25 +1,24 @@
 {
-  "name": "iotpoland2016",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "cloudant_boilerplate_nodejs",
+  "version": "0.0.2",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/andy250/iotpoland2016.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/andy250/iotpoland2016/issues"
-  },
-  "homepage": "https://github.com/andy250/iotpoland2016#readme",
   "dependencies": {
-    "body-parser": "^1.15.2",
-    "express": "^4.14.0",
-    "socket.io": "^1.4.8",
+    "express": "4.13.x",
+    "ejs": "2.4.x",
+    "cloudant": "1.4.x",
+    "body-parser": "1.14.x",
+    "method-override": "2.3.x",
+    "morgan": "1.6.x",
+    "errorhandler": "1.4.x",
+    "connect-multiparty": "2.0.x",
+	"socket.io": "^1.4.8",
     "watson-developer-cloud": "^2.4.0"
+  },
+  "repository": {},
+  "engines": {
+  	"node": "4.x"
   }
 }
